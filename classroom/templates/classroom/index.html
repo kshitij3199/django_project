@@ -1,0 +1,17 @@
+{% if all_albums %}
+    <h3>BATCH NO 1</h3>
+ <ul>
+    {% for album in all_albums %}
+    <li>{{ album.artist}} </a> {{ album.marks }}</li>
+    {% endfor %}
+ </ul>
+{% else %}
+    <h3>you dont have any album</h3>
+{% endif %}
+<form action="{% url 'classroom:calculate'%}" method="post">
+     {% csrf_token %}
+     <input type="submit" value="upgrade">
+</form>
+
+
+
